@@ -1,0 +1,566 @@
+﻿@model VideoPoker2.ViewModels.GameViewModel
+@Styles.Render("~/Content/Styles.css")
+
+<h1 class="text-center">Jacks or Better Video Poker</h1>
+<table class="table tbl-changeSize" id="tblPaytable">
+    <tr>
+        <th class="table-bordered" id="thHand">
+            @Html.DisplayNameFor(model => model.HandName)
+        </th>
+        <th class="table-bordered" id="thBet1">
+            @Html.DisplayNameFor(model => model.Bet1Pays)
+        </th>
+        <th class="table-bordered" id="thBet2">
+            @Html.DisplayNameFor(model => model.Bet2Pays)
+        </th>
+        <th class="table-bordered" id="thBet3">
+            @Html.DisplayNameFor(model => model.Bet3Pays)
+        </th>
+        <th class="table-bordered" id="thBet4">
+            @Html.DisplayNameFor(model => model.Bet4Pays)
+        </th>
+        <th class="table-bordered" id="thBet5">
+            @Html.DisplayNameFor(model => model.Bet5Pays)
+        </th>
+    </tr>
+    <tr class="table-bordered" id="trRoyalFlush">
+        <td class="table-bordered paytable-default" id="tdRoyalFlush0">
+            @Html.DisplayFor(modelItem => Model.Paytable[0].HandName)
+        </td>
+        <td class="table-bordered paytable-default" id="tdRoyalFlush1">
+            @Html.DisplayFor(modelItem => Model.Paytable[0].Bet1Pays)
+        </td>
+        <td class="table-bordered paytable-default" id="tdRoyalFlush2">
+            @Html.DisplayFor(modelItem => Model.Paytable[0].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdRoyalFlush3">
+            @Html.DisplayFor(modelItem => Model.Paytable[0].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdRoyalFlush4">
+            @Html.DisplayFor(modelItem => Model.Paytable[0].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdRoyalFlush5">
+            @Html.DisplayFor(modelItem => Model.Paytable[0].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trStraightFlush">
+        <td class="table-bordered paytable-default" id="tdStraightFlush0">
+            @Html.DisplayFor(modelItem => Model.Paytable[1].HandName)
+        </td>
+        <td class="table-bordered paytable-default" id="tdStraightFlush1">
+            @Html.DisplayFor(modelItem => Model.Paytable[1].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdStraightFlush2">
+            @Html.DisplayFor(modelItem => Model.Paytable[1].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdStraightFlush3">
+            @Html.DisplayFor(modelItem => Model.Paytable[1].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdStraightFlush4">
+            @Html.DisplayFor(modelItem => Model.Paytable[1].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdStraightFlush5">
+            @Html.DisplayFor(modelItem => Model.Paytable[1].Bet5Pays)
+        </td>
+    <tr class="table-bordered" id="trQuads">
+        <td class="table-bordered paytable-default" id="tdQuads0">
+            @Html.DisplayFor(modelItem => Model.Paytable[2].HandName)
+        </td>
+        <td class="table-bordered" id="tdQuads1">
+            @Html.DisplayFor(modelItem => Model.Paytable[2].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdQuads2">
+            @Html.DisplayFor(modelItem => Model.Paytable[2].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdQuads3">
+            @Html.DisplayFor(modelItem => Model.Paytable[2].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdQuads4">
+            @Html.DisplayFor(modelItem => Model.Paytable[2].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdQuads5">
+            @Html.DisplayFor(modelItem => Model.Paytable[2].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trFullHouse">
+        <td class="table-bordered paytable-default" id="tdFullHouse0">
+            @Html.DisplayFor(modelItem => Model.Paytable[3].HandName)
+        </td>
+        <td class="table-bordered" id="tdFullHouse1">
+            @Html.DisplayFor(modelItem => Model.Paytable[3].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdFullHouse2">
+            @Html.DisplayFor(modelItem => Model.Paytable[3].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdFullHouse3">
+            @Html.DisplayFor(modelItem => Model.Paytable[3].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdFullHouse4">
+            @Html.DisplayFor(modelItem => Model.Paytable[3].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdFullHouse5">
+            @Html.DisplayFor(modelItem => Model.Paytable[3].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trFlush">
+        <td class="table-bordered paytable-default" id="tdFlush0">
+            @Html.DisplayFor(modelItem => Model.Paytable[4].HandName)
+        </td>
+        <td class="table-bordered" id="tdFlush1">
+            @Html.DisplayFor(modelItem => Model.Paytable[4].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdFlush2">
+            @Html.DisplayFor(modelItem => Model.Paytable[4].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdFlush3">
+            @Html.DisplayFor(modelItem => Model.Paytable[4].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdFlush4">
+            @Html.DisplayFor(modelItem => Model.Paytable[4].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdFlush5">
+            @Html.DisplayFor(modelItem => Model.Paytable[4].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trStraight">
+        <td class="table-bordered paytable-default" id="tdStraight0">
+            @Html.DisplayFor(modelItem => Model.Paytable[5].HandName)
+        </td>
+        <td class="table-bordered" id="tdStraight1">
+            @Html.DisplayFor(modelItem => Model.Paytable[5].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdStraight2">
+            @Html.DisplayFor(modelItem => Model.Paytable[5].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdStraight3">
+            @Html.DisplayFor(modelItem => Model.Paytable[5].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdStraight4">
+            @Html.DisplayFor(modelItem => Model.Paytable[5].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdStraight5">
+            @Html.DisplayFor(modelItem => Model.Paytable[5].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trTrips">
+        <td class="table-bordered paytable-default" id="tdTrips0">
+            @Html.DisplayFor(modelItem => Model.Paytable[6].HandName)
+        </td>
+        <td class="table-bordered" id="tdTrips1">
+            @Html.DisplayFor(modelItem => Model.Paytable[6].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdTrips2">
+            @Html.DisplayFor(modelItem => Model.Paytable[6].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdTrips3">
+            @Html.DisplayFor(modelItem => Model.Paytable[6].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdTrips4">
+            @Html.DisplayFor(modelItem => Model.Paytable[6].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdTrips5">
+            @Html.DisplayFor(modelItem => Model.Paytable[6].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trTwoPair">
+        <td class="table-bordered paytable-default" id="tdTwoPair0">
+            @Html.DisplayFor(modelItem => Model.Paytable[7].HandName)
+        </td>
+        <td class="table-bordered" id="tdTwoPair1">
+            @Html.DisplayFor(modelItem => Model.Paytable[7].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdTwoPair2">
+            @Html.DisplayFor(modelItem => Model.Paytable[7].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdTwoPair3">
+            @Html.DisplayFor(modelItem => Model.Paytable[7].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdTwoPair4">
+            @Html.DisplayFor(modelItem => Model.Paytable[7].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdTwoPair5">
+            @Html.DisplayFor(modelItem => Model.Paytable[7].Bet5Pays)
+        </td>
+    </tr>
+    <tr class="table-bordered" id="trJacksOrBetter">
+        <td class="table-bordered paytable-default" id="tdJacksOrBetter0">
+            @Html.DisplayFor(modelItem => Model.Paytable[8].HandName)
+        </td>
+        <td class="table-bordered" id="tdJacksOrBetter1">
+            @Html.DisplayFor(modelItem => Model.Paytable[8].Bet1Pays)
+        </td>
+        <td class="table-bordered" id="tdJacksOrBetter2">
+            @Html.DisplayFor(modelItem => Model.Paytable[8].Bet2Pays)
+        </td>
+        <td class="table-bordered" id="tdJacksOrBetter3">
+            @Html.DisplayFor(modelItem => Model.Paytable[8].Bet3Pays)
+        </td>
+        <td class="table-bordered" id="tdJacksOrBetter4">
+            @Html.DisplayFor(modelItem => Model.Paytable[8].Bet4Pays)
+        </td>
+        <td class="table-bordered" id="tdJacksOrBetter5">
+            @Html.DisplayFor(modelItem => Model.Paytable[8].Bet5Pays)
+        </td>
+    </tr>
+</table>
+<script src="~/Scripts/jquery-1.10.2.js"></script>  
+<div class="row">
+    <div class="col-md-10">
+        <div id="divGameResult" class="text-center game-over">
+            Bet 1 to 5 Credits
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 my-div" id="divImages">
+        <div class="col-xs-2">
+            <img src="~/Images/b2fv.png" id="card0" onclick="hold1()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+        </div>
+        <div class="col-xs-2">
+            <img src="~/Images/b2fv.png" id="card1" onclick="hold2()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+        </div>
+        <div class="col-xs-2">
+            <img src="~/Images/b2fv.png" id="card2" onclick="hold3()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+        </div>
+        <div class="col-xs-2">
+            <img src="~/Images/b2fv.png" id="card3" onclick="hold4()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+        </div>
+        <div class="col-xs-2">
+            <img src="~/Images/b2fv.png" id="card4" onclick="hold5()" height="200" alt="Hold" class="img-unclickable img-changeSize" />
+        </div>
+        <div class="col-xs-2">
+            <input type="button" id="btnDealDraw" class="btn-draw" value="Deal" /><br /><br />
+            <input type="button" id="btnChangeBet" class="btn-lg btn-default" value="Bet 1" /><br /><br />
+            <div class="row">
+                <div class="col-xs-2">
+                    <label class="display-credits">Credit</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <div id="divCredits" class="text-center label table-bordered display-credits"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-xs-2">
+            <div id="div1" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div2" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div3" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div4" class="text-center"></div>
+        </div>
+        <div class="col-xs-2">
+            <div id="div5" class="text-center"></div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(function () {
+            $('#btnChangeBet').click(function () {
+                var betAmt = $('#btnChangeBet').attr('value').match(/\d+/);
+                $.ajax({
+                    type: 'GET',
+                    datatype: 'json',
+                    contentType: 'application/json',
+                    url: '@Url.Action("ChangeBetAmount", "JacksOrBetter")',
+                    data: {
+                        betAmt: betAmt
+                    },
+                    traditional: true,
+                    success: function (result) {
+                        $('#btnChangeBet').prop('value', 'Bet ' + result.BetAmount);
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $('#divCredits').text(@Model.Credits);
+        $(function () {
+            // handles Deal button click...
+            $('#btnDealDraw').click(function () {
+                for (i = 0; i < 6; i++) {
+                    if (i == 0) {
+                        $('#tdRoyalFlush' + i).css('color', 'red');
+                        $('#tdStraightFlush' + i).css('color', 'red');
+                        $('#tdQuads' + i).css('color', 'red');
+                        $('#tdFullHouse' + i).css('color', 'red');
+                        $('#tdFlush' + i).css('color', 'red');
+                        $('#tdStraight' + i).css('color', 'red');
+                        $('#tdTrips' + i).css('color', 'red');
+                        $('#tdTwoPair' + i).css('color', 'red');
+                        $('#tdJacksOrBetter' + i).css('color', 'red');
+                    }
+                    else {
+                        $('#tdRoyalFlush' + i).css('color', 'white');
+                        $('#tdStraightFlush' + i).css('color', 'white');
+                        $('#tdQuads' + i).css('color', 'white');
+                        $('#tdFullHouse' + i).css('color', 'white');
+                        $('#tdFlush' + i).css('color', 'white');
+                        $('#tdStraight' + i).css('color', 'white');
+                        $('#tdTrips' + i).css('color', 'white');
+                        $('#tdTwoPair' + i).css('color', 'white');
+                        $('#tdJacksOrBetter' + i).css('color', 'white');
+                        $('#thBet' + i).css('color', 'white');
+                    }
+                }
+                $("img").toggleClass("img-clickable");
+                $("img").on('dragstart', function () { return false; })
+                $('#divGameResult').toggleClass('game-start');
+                $('#btnDealDraw').toggleClass('btn-deal');
+                if (document.getElementById('btnDealDraw').value == 'Deal') {
+                    $('#btnChangeBet').prop('disabled', true);
+                    betAmt = $('#btnChangeBet').attr('value').match(/\d+/);
+                    $.ajax({
+                        method: 'POST',
+                        url: '@Url.Action("Test", "JacksOrBetter")',
+                        data: { name: "bitch ass ho", location: "south park" }
+                    })
+                    .done(function(msg){
+                        alert("data saved: " + msg);
+                    });
+                    $.ajax({
+                        type: 'GET',
+                        datatype: 'json',
+                        contentType: 'application/json',
+                        url: '@Url.Action("Deal", "JacksOrBetter")',
+                        data: {
+                            betAmt: betAmt
+                        },
+                        traditional: true,
+                        success: function (result) {
+                            for (i = 0; i < result.Hand.length; i++) {
+                                var card = '#card' + i;
+                                $(card).attr('src', result.Hand[i].ImageName);
+                            }
+                            $('#btnDealDraw').prop('value', 'Draw');
+                            $('#divGameResult').text(result.Message);
+                            $('#divCredits').text(result.Credits);
+                            clearDivs();
+                            switch (result.Message) {
+                                case 'JACKS OR BETTER':
+                                    $('#tdJacksOrBetter0').css('color', 'yellow');
+                                    $('#tdJacksOrBetter' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case '2 PAIR':
+                                    $('#tdTwoPair0').css('color', 'yellow');
+                                    $('#tdTwoPair' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                                case '3 OF A KIND':
+                                    $('#tdTrips0').css('color', 'yellow');
+                                    $('#tdTrips' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                                case 'STRAIGHT':
+                                    $('#tdStraight0').css('color', 'yellow');
+                                    $('#tdStraight' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                                case 'FLUSH':
+                                    $('#tdFlush0').css('color', 'yellow');
+                                    $('#tdFlush' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                                case 'FULL HOUSE':
+                                    $('#tdFullHouse0').css('color', 'yellow');
+                                    $('#tdFullHouse' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                                case '4 OF A KIND':
+                                    $('#tdQuads0').css('color', 'yellow');
+                                    $('#tdQuads' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'STRAIGHT FLUSH':
+                                    $('#tdStraightFlush0').css('color', 'yellow');
+                                    $('#tdStrightFlush' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                                case 'ROYAL FLUSH':
+                                    $('#tdRoyalFlush0').css('color', 'yellow');
+                                    $('#tdRoyalFlush' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    document.getElementById('sound1').play();
+                                    break;
+                            }
+                        }
+                    });
+                }
+                else {
+                    // handles Draw button click...
+                    $('#btnChangeBet').prop('disabled', false);
+                    var betAmt = $('#btnChangeBet').attr('value').match(/\d+/);
+                    $.ajax({
+                        type: 'GET',
+                        datatype: 'json',
+                        contentType: 'application/json',
+                        url: '@Url.Action("Draw", "JacksOrBetter")',
+                        data: {
+                            arr: arr,
+                            betAmt: betAmt
+                        },
+                        traditional: true,
+                        success: function (result) {
+                            for (i = 0; i < result.Hand.length; i++) {
+                                var card = '#card' + i;
+                                $(card).attr('src', result.Hand[i].ImageName);
+                            }
+                            $('#btnDealDraw').prop('value', 'Deal');
+                            $('#divGameResult').text(result.Message);
+                            $('#divCredits').text(result.Credits);
+                            switch (result.Message) {
+                                case 'WINNER - JACKS OR BETTER':
+                                    $('#tdJacksOrBetter0').css('color', 'yellow');
+                                    $('#tdJacksOrBetter' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - 2 PAIR':
+                                    $('#tdTwoPair0').css('color', 'yellow');
+                                    $('#tdTwoPair' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - 3 OF A KIND':
+                                    $('#tdTrips0').css('color', 'yellow');
+                                    $('#tdTrips' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - STRAIGHT':
+                                    $('#tdStraight0').css('color', 'yellow');
+                                    $('#tdStraight' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - FLUSH':
+                                    $('#tdFlush0').css('color', 'yellow');
+                                    $('#tdFlush' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - FULL HOUSE':
+                                    $('#tdFullHouse0').css('color', 'yellow');
+                                    $('#tdFullHouse' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - 4 OF A KIND':
+                                    $('#tdQuads0').css('color', 'yellow');
+                                    $('#tdQuads' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - STRAIGHT FLUSH':
+                                    $('#tdStraightFlush0').css('color', 'yellow');
+                                    $('#tdStrightFlush' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                                case 'WINNER - ROYAL FLUSH':
+                                    $('#tdRoyalFlush0').css('color', 'yellow');
+                                    $('#tdRoyalFlush' + result.BetAmount).css('color', 'yellow');
+                                    $('#thBet' + result.BetAmount).css('color', 'yellow');
+                                    break;
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        function clearDivs() {
+            document.getElementById('div1').style.visibility = 'hidden'
+            document.getElementById('div2').style.visibility = 'hidden'
+            document.getElementById('div3').style.visibility = 'hidden'
+            document.getElementById('div4').style.visibility = 'hidden'
+            document.getElementById('div5').style.visibility = 'hidden'
+            initializeArrays();
+        }
+
+        //methods to hold or muck cards...
+        var arr = [];
+        function initializeArrays() {
+            for (i = 0; i < 5; i++) {
+                arr[i] = 0;
+            }
+        }
+        function hold1() {
+            var hold = false;
+            if (document.getElementById('div1').style.visibility == 'visible') {
+                document.getElementById('div1').style.visibility = 'hidden';
+                arr[0] = 0;
+            }
+            else {
+                document.getElementById('div1').style.visibility = 'visible';
+                document.getElementById('div1').innerHTML = '<h3>Hold</h3>';
+                hold = true;
+                arr[0] = 1;
+            }
+        }
+        function hold2() {
+            var hold = false;
+            if (document.getElementById('div2').style.visibility == 'visible') {
+                document.getElementById('div2').style.visibility = 'hidden';
+                arr[1] = 0;
+            }
+            else {
+                document.getElementById('div2').style.visibility = 'visible';
+                document.getElementById('div2').innerHTML = '<h3>Hold</h3>';
+                hold = true;
+                arr[1] = 1;
+            }
+        }
+        function hold3() {
+            var hold = false;
+            if (document.getElementById('div3').style.visibility == 'visible') {
+                document.getElementById('div3').style.visibility = 'hidden';
+                arr[2] = 0;
+            }
+            else {
+                document.getElementById('div3').style.visibility = 'visible';
+                document.getElementById('div3').innerHTML = '<h3>Hold</h3>';
+                hold = true;
+                arr[2] = 1;
+            }
+        }
+        function hold4() {
+            var hold = false;
+            if (document.getElementById('div4').style.visibility == 'visible') {
+                document.getElementById('div4').style.visibility = 'hidden';
+                arr[3] = 0;
+            }
+            else {
+                document.getElementById('div4').style.visibility = 'visible';
+                document.getElementById('div4').innerHTML = '<h3>Hold</h3>';
+                hold = true;
+                arr[3] = 1;
+            }
+        }
+        function hold5() {
+            var hold = false;
+            if (document.getElementById('div5').style.visibility == 'visible') {
+                document.getElementById('div5').style.visibility = 'hidden';
+                arr[4] = 0;
+            }
+            else {
+                document.getElementById('div5').style.visibility = 'visible';
+                document.getElementById('div5').innerHTML = '<h3>Hold</h3>';
+                hold = true;
+                arr[4] = 1;
+            }
+        }
+    </script>
+
+}
+<script src="~/Scripts/bootstrap.min.js"></script>

@@ -323,8 +323,7 @@
                     betAmt = $('#btnChangeBet').attr('value').match(/\d+/);
                     $.ajax({
                         method: 'POST',
-                        url: '@Url.Action("Test", "JacksOrBetter")',
-                        data: { name: "bitch ass ho", location: "south park" }
+                        url: '@Url.Action("Test", "JacksOrBetter")'
                     })
                     .done(function(msg){
                         alert("data saved: " + msg);
